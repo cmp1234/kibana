@@ -10,7 +10,7 @@ ENV KIBANA_VERSION 4.6.4
 RUN set -x \
 	&& KIBANA_HOME_BASE=/usr/local \
 	&& KIBANA_HOME=$KIBANA_HOME_BASE/kibana \
-	&& curl -fSL https://download.elastic.co/kibana/kibana/kibana-${KIBANA_VERSION}-linux-x86_64.tar.gz -o kibana.tar.gz \
+	&& wget https://download.elastic.co/kibana/kibana/kibana-${KIBANA_VERSION}-linux-x86_64.tar.gz -O kibana.tar.gz \
 	&& tar xf kibana.tar.gz -C $KIBANA_HOME_BASE \
 	&& mv $KIBANA_HOME_BASE/kibana-${KIBANA_VERSION}-linux-x86_64 $KIBANA_HOME_BASE/kibana \
 	&& rm -f $KIBANA_HOME/node/bin/* \
