@@ -1,4 +1,4 @@
-FROM cmp1234/node:6.11.1
+FROM cmp1234/node:6.10.2
 
 # add our user and group first to make sure their IDs get assigned consistently
 RUN adduser -D -H kibana
