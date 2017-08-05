@@ -15,7 +15,7 @@ RUN set -x \
 	&& curl -fSL  https://artifacts.elastic.co/downloads/kibana/kibana-${KIBANA_VERSION}-linux-x86_64.tar.gz -o kibana.tar.gz \
 	&& tar xf kibana.tar.gz -C $KIBANA_HOME_BASE \
 	&& mv $KIBANA_HOME_BASE/kibana-${KIBANA_VERSION}-linux-x86_64 $KIBANA_HOME_BASE/kibana \
-	&& rm -f $KIBANA_HOME/node/* \
+	&& rm -rf $KIBANA_HOME/node/* \
 	&& rm -f kibana.tar.gz \
 	&& chown -R kibana:kibana $KIBANA_HOME \
 	&& sed -ri "s!^(\#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!" $KIBANA_HOME/config/kibana.yml \
