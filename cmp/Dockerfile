@@ -1,7 +1,7 @@
 FROM cmp1234/node:6.10.2-alpine3.6
 
 # add our user and group first to make sure their IDs get assigned consistently
-RUN adduser -D -H kibana
+RUN adduser -D -H kibana && apk add --no-cache 'su-exec>=0.2'
 
 
 ENV KIBANA_MAJOR 5.5
