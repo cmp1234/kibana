@@ -20,7 +20,6 @@ RUN set -x \
 	&& chown -R kibana:kibana $KIBANA_HOME \
 	&& sed -ri "s!^(\#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!" $KIBANA_HOME/config/kibana.yml \
 	&& grep -q 'elasticsearch:9200' $KIBANA_HOME/config/kibana.yml \
-	&& /usr/local/kibana/bin/kibana-plugin install x-pack \
 	&& apk del .build-deps
 
 ENV PATH /usr/local/kibana/bin:$PATH
