@@ -5,7 +5,7 @@ RUN addgroup -S -g 18345 kibana && adduser -D -H -G kibana -u 18345 kibana && ap
 
 
 ENV KIBANA_MAJOR 5.5
-ENV KIBANA_VERSION 5.5.0
+ENV KIBANA_VERSION 5.5.1
 
 RUN set -x \
     	&& apk add --no-cache --virtual .build-deps \
