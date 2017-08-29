@@ -1,4 +1,4 @@
-FROM cmp1234/node:6.10.2-alpine3.6
+FROM cmp1234/node:6.11.1-alpine3.6
 
 # add our user and group first to make sure their IDs get assigned consistently
 RUN addgroup -S -g 18345 kibana && adduser -D -H -G kibana -u 18345 kibana && apk add --no-cache 'su-exec>=0.2'
