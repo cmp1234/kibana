@@ -4,8 +4,8 @@ FROM cmp1234/node:6.11.1-alpine3.6
 RUN addgroup -S -g 18345 kibana && adduser -D -H -G kibana -u 18345 kibana && apk add --no-cache 'su-exec>=0.2'
 
 
-ENV KIBANA_MAJOR 5.5
-ENV KIBANA_VERSION 5.5.1
+ENV KIBANA_MAJOR 5.6
+ENV KIBANA_VERSION 5.6.1
 
 RUN set -x \
     	&& apk add --no-cache --virtual .build-deps \
